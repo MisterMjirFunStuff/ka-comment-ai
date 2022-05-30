@@ -18,6 +18,7 @@ def csv_comments(url, amount):
     with open(video_name + '.csv', 'w') as csv_file:
         writer = csv.writer(csv_file, dialect='comment')
         # Loop through the questions
+        writer.writerow(['comment', 'score'])
         for question in question_json['feedback']:
             # Write the content of the question
             writer.writerow([question['content']])
